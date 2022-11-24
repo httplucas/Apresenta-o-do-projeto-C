@@ -108,12 +108,13 @@ int main()
 
 		
 	}
-	printf("\n 1-Dinheiro \n 2-Cartao de Credito \n 3-Pix \n Como voce deseja pagar?");
-	scanf("%d",&pagamento);
+		//Selecionando as formas de pagamento
+		printf("\n 1-Dinheiro \n 2-Cartao de Credito \n 3-Pix \n Como voce deseja pagar?");
+		scanf("%d",&pagamento);
 	
 	for(j=0; ; j++) {
 		
-		//Selecionando as formas de pagamento
+		//Selecionando as formas de pagamento se caso o usuario não selecionar as listadas
 		if(pagamento>3 || pagamento<1) {
 		printf("A forma de pagamento escolhida nao esta disponivel, por favor escolha uma das formas listadas");
 		printf("\n 1-Dinheiro \n 2-Cartao de Credito \n 3-Pix \n Como voce deseja pagar?");
@@ -129,7 +130,7 @@ int main()
 				
 				case 2:
 				printf("Voce selecionou o pagamento por Cartao de Credito! ");
-				printf("Digite quantas vezes você quer parcelar: ");
+				printf("Digite quantas vezes voce quer parcelar: ");
 				scanf("%f",&parcelamento);
 				cont = fatura / parcelamento;
 				printf("Total da compra deu: %.2f x %.2f = %.2f ",fatura ,parcelamento,cont);
