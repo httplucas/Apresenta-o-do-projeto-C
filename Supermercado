@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <locale.h>
+
 
 //definindo a struct dos itens
 struct produtos{
@@ -17,8 +17,7 @@ struct produtos{
 };
 int main()
 {
-	//definindo linguagem e acentuação local
-	setlocale(LC_ALL, "Portuguese");
+
 	//chamando o struct
 	struct produtos loja;
 	
@@ -31,14 +30,14 @@ int main()
  	printf("Bem vindo ao mercadinho\n");
 	printf("Digite sua quantia em dinheiro que deseja gastar: ");
 	scanf("%f", &carteira);
-	printf("Lista dos produtos do mercadinho: \n 1-Arroz R$4,50 \n 2-Feijão R$7 \n 3-Macarrão R$3.50 \n 4-Açúcar R$4 \n 5-Sal R$3.50 \n 6-Caixa de leite R$7 \n 7-Kg de carne R$21.50 \n 8-Chocolate R$6.50 \n 9-Refrigerante R$8 \n 10-Sorvete R$12\n");
+	printf("Lista dos produtos do mercadinho: \n 1-Arroz R$4,50 \n 2-Feijao R$7 \n 3-Macarrao R$3.50 \n 4-Acucar R$4 \n 5-Sal R$3.50 \n 6-Caixa de leite R$7 \n 7-Kg de carne R$21.50 \n 8-Chocolate R$6.50 \n 9-Refrigerante R$8 \n 10-Sorvete R$12\n");
 	continuar = 1;
 	
 	
 		do{
 		
 		
-		printf("Digite o número do produto que deseja:  ");
+		printf("Digite o numero do produto que deseja:  ");
 		scanf("%d", &loja.escolha);
 		
 		//restrigindo a escolha de um produto não listado
@@ -93,31 +92,31 @@ int main()
 			
 		}
 		
-		printf(" Digite 1 para continuar comprando, caso queira parar, digite qualquer outro número: " );
+		printf(" Digite 1 para continuar comprando, caso queira parar, digite qualquer outro numero: " );
 		scanf("%d", &continuar);
 			
 	//continuar comprando se o usuario ainda tiver dinheiro 
 	}while(continuar == 1 && carteira >= 0);       
 
-	printf("\nA sua fatura é: %.1f\n",fatura);	
+	printf("\nA sua fatura eh: %.1f\n",fatura);	
 		if(fatura > carteira){
 		printf("\nSaldo insuficiente para pagar a conta.");
 		printf("\nInsira o valor para adicionar a sua carteira:");
 		scanf("%f", &saldo);
 		total = saldo + carteira;
-		printf("Seu novo saldo na sua carteira é de: %.1f", total);
+		printf("Seu novo saldo na sua carteira eh de: %.1f", total);
 
 		
 	}
-	printf("\n 1-Dinheiro \n 2-Cartão de Crédito \n 3-Pix \n Como você deseja pagar?");
+	printf("\n 1-Dinheiro \n 2-Cartao de Credito \n 3-Pix \n Como voce deseja pagar?");
 	scanf("%d",&pagamento);
 	
 	for(j=0; ; j++) {
 		
 		//Selecionando as formas de pagamento
 		if(pagamento>3 || pagamento<1) {
-		printf("A forma de pagamento escolhida não esta disponivel, por favor escolha uma das formas listadas");
-		printf("\n 1-Dinheiro \n 2-Cartão de Crédito \n 3-Pix \n Como você deseja pagar?");
+		printf("A forma de pagamento escolhida nao esta disponivel, por favor escolha uma das formas listadas");
+		printf("\n 1-Dinheiro \n 2-Cartao de Credito \n 3-Pix \n Como voce deseja pagar?");
 		scanf("%d",&pagamento);
 		
 			
@@ -125,12 +124,11 @@ int main()
 			//perguntando ao usuario a forma de pagamento e processando as condicionais conforme escolha
 			switch (pagamento){
 				case 1:
-				printf("Você selecionou o pagamento por dinheiro!, Pagamento realizado com sucesso");
-				printf("Compra feita com sucesso!, Volte Sempre!");
+				printf("Voce selecionou o pagamento por dinheiro!, Pagamento realizado com sucesso");
 				break;
 				
 				case 2:
-				printf("Você selecionou o pagamento por Cartão de Credito! ");
+				printf("Voce selecionou o pagamento por Cartao de Credito! ");
 				printf("Digite quantas vezes você quer parcelar: ");
 				scanf("%f",&parcelamento);
 				cont = fatura / parcelamento;
@@ -141,7 +139,7 @@ int main()
 				break;
 				
 				case 3:
-				printf("Você selecionou o pagamento por pix!,Chave pix (numero): 987615420\n");
+				printf("Voce selecionou o pagamento por pix!,Chave pix (numero): 987615420\n");
 				printf("Compra feita com sucesso!, Volte Sempre!");
 				break;			
 				}	
@@ -150,10 +148,10 @@ int main()
 			if (pagamento==1 &&  carteira < fatura)
 			{
 			possald = total - fatura;
-			printf("\n Seu troco é de: %.1f", possald);
+			printf("\n Seu troco eh de: %.1f", possald);
 			}if( pagamento == 1  && carteira > fatura){
 				possald = carteira - fatura;
-				printf("\n Seu troco é de: %.1f reais", possald);
+				printf("\n Seu troco eh de: %.1f reais", possald);
 			}
 			
 
